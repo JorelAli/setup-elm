@@ -3,10 +3,6 @@
   "version": "1.0.0",
   "description": "Setup Elm GitHub action",
   "main": "index.js",
-  "scripts": {
-    "lint": "eslint index.js",
-    "test": "eslint index.js && jest"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/JorelAli/setup-elm.git"
@@ -14,7 +10,8 @@
   "keywords": [
     "GitHub",
     "Actions",
-    "JavaScript"
+    "JavaScript",
+    "Elm"
   ],
   "author": "GitHub",
   "license": "MIT",
@@ -25,9 +22,5 @@
   "dependencies": {
     "@actions/core": "^1.0.0",
     "@actions/exec": "^1.0.0"
-  },
-  "devDependencies": {
-    "eslint": "^6.3.0",
-    "jest": "^24.9.0"
   }
 }
