@@ -1,5 +1,9 @@
 name: 'Setup Elm environment'
 description: 'Sets up an Elm environment'
+author: 'Jorel Ali'
+branding:
+  icon: 'download'
+  color: 'blue'
 inputs:
   elm-version:  # id of input
     description: 'Version of Elm to use. E.g. 0.19.1'
