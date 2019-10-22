@@ -1,18 +1,19 @@
 const core = require('@actions/core');
-const wait = require('./wait');
+const exec = require('@actions/exec');
 
 
 // most @actions toolkit packages have async methods
 async function run() {
   try { 
-    const ms = core.getInput('milliseconds');
-    console.log(`Waiting ${ms} milliseconds ...`)
+    const version = core.getInput('elm-version');
+    console.log(`Installing Elm ${version} ...`);
 
-    core.debug((new Date()).toTimeString())
-    wait(parseInt(ms));
-    core.debug((new Date()).toTimeString())
+    await exec.exec(`curl -L -o elm.gz https://github.com/elm/compiler/releases/download/${version}/binary-for-linux-64-bit.gz`);
+    await exec.exec('gunzip elm.gz');
+    await exec.exec('chmod +x elm');
+    await exec.exec('sudo mv elm /usr/local/bin/');
 
-    core.setOutput('time', new Date().toTimeString());
+    console.log(`Elm ${version} installed.`);
   } 
   catch (error) {
     core.setFailed(error.message);

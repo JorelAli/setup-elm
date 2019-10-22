@@ -13,7 +13,7 @@ jobs:
     - uses: actions/checkout@v1
 
     - run: npm ci
-    - run: npm test
+    - run: npm test --passWithNoTests
     - uses: ./
       with:
-        milliseconds: 1000
+        elm-version: 0.19.1

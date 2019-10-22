@@ -1,13 +1,10 @@
-name: 'Wait'
-description: 'Wait a designated number of milliseconds'
+name: 'Setup Elm environment'
+description: 'Sets up an Elm environment'
 inputs:
-  milliseconds:  # id of input
-    description: 'number of milliseconds to wait'
+  elm-version:  # id of input
+    description: 'Version of Elm to use. E.g. 0.19.1'
     required: true
-    default: '1000'
-outputs:
-  time: # output will be available to future steps 
-    description: 'The message to output'
+    default: '0.19.1'
 runs:
   using: 'node12'
   main: 'index.js'
