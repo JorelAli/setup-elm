@@ -8,7 +8,16 @@ async function run() {
     const version = core.getInput('elm-version');
     console.log(`Installing Elm ${version} ...`);
 
-    await exec.exec(`curl -L -o elm.gz https://github.com/elm/compiler/releases/download/${version}/binary-for-linux-64-bit.gz`);
+    let os;
+    if (process.platform === 'win32') {
+      os = 'windows';
+    } else if (process.platform === 'darwin') {
+      os = 'mac';
+    } else {
+      os = 'linux';
+    }
+
+    await exec.exec(`curl -L -o elm.gz https://github.com/elm/compiler/releases/download/${version}/binary-for-${os}-64-bit.gz`);
     await exec.exec('gunzip elm.gz');
     await exec.exec('chmod +x elm');
     await exec.exec('sudo mv elm /usr/local/bin/');
