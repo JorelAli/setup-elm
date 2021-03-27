@@ -12,7 +12,7 @@ Basic:
 
 ```yaml
 steps:
-- uses: jorelali/setup-elm@v2
+- uses: jorelali/setup-elm@v3
   with:
     elm-version: 0.19.1
 - run: elm make src/Main.elm
