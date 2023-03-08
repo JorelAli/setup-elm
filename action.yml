@@ -9,7 +9,7 @@ inputs:
     description: 'Version of Elm to use. E.g. 0.19.1'
     required: true
     default: '0.19.1'
-  run-as-root: # whether to run as root or not
+  run-as-root: 
     description: 'Whether to run as root or not'
     required: false
     default: 'false'
