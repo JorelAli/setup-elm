@@ -23,7 +23,13 @@ async function run() {
     await exec.exec(`curl -L -o elm.gz https://github.com/elm/compiler/releases/download/${version}/binary-for-${os}-64-bit.gz`, [], {cwd: tmpDir});
     await exec.exec('gunzip elm.gz', [], {cwd: tmpDir});
     await exec.exec('chmod +x elm', [], {cwd: tmpDir});
-    await exec.exec('sudo mv elm /usr/local/bin/', [], {cwd: tmpDir});
+
+    const runAsRoot = core.getInput('run-as-root');
+    if (runAsRoot === 'true') {
+        await exec.exec('mv elm /usr/local/bin/', [], {cwd: tmpDir});
+    } else {
+        await exec.exec('sudo mv elm /usr/local/bin/', [], {cwd: tmpDir});
+    }
     
     rmdirSync(tmpDir, {recursive: true});
     console.log(`Elm ${version} installed.`);
