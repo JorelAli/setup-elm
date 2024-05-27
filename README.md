@@ -12,7 +12,7 @@ Basic:
 
 ```yaml
 steps:
-- uses: jorelali/setup-elm@v5
+- uses: jorelali/setup-elm@v6
   with:
     elm-version: 0.19.1
 - run: elm make src/Main.elm
@@ -22,7 +22,7 @@ Running as root (this won't run `sudo` when moving the elm binary):
 
 ```yaml
 steps:
-- uses: jorelali/setup-elm@v5
+- uses: jorelali/setup-elm@v6
   with:
     elm-version: 0.19.1
     run-as-root: true
