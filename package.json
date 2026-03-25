@@ -1,6 +1,6 @@
 {
   "name": "setup-elm",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Setup Elm GitHub action",
   "main": "index.js",
   "repository": {
@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/JorelAli/setup-elm#readme",
   "dependencies": {
-    "@actions/core": "^1.9.1",
-    "@actions/exec": "^1.0.0"
+    "@actions/core": "^2.0.0",
+    "@actions/exec": "^2.0.0"
   }
 }
